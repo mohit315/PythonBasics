@@ -1,22 +1,27 @@
-# There are different types of data types in Python. Some built-in Python data types are:
+"""Demonstrate indexing, insertion, and appending to lists."""
 
-# Numeric data types: int, float, complex
-# String data types: str
-# Sequence types: list, tuple, range
-# Binary types: bytes, bytearray, memoryview
-# Mapping data type: dict
-# Boolean type: bool
-# Set data types: set, frozenset
 
-values = [1, 2, 'Mohit', 4, 5]
+def insert_at(items: list[str | int], index: int, value: str) -> list[str | int]:
+    """Return a copy with value inserted, leaving the original unchanged."""
+    result = items.copy()
+    result.insert(index, value)
+    return result
 
-print(values[3])
-print(values[0])
-print(values[1])
-print(values[2])
 
-# Operation: How to add/insert value into the list
-values.insert(3, 'Adhiya')
-print(values)
-values.append('End')
-print(values)
+def append_item(items: list[str | int], value: str) -> list[str | int]:
+    """Return a new list with value appended."""
+    return [*items, value]
+
+
+def main() -> None:
+    values: list[str | int] = [1, 2, "Mohit", 4, 5]
+    print(f"Original: {values}")
+    print(f"Index 3: {values[3]}")
+    updated = insert_at(values, 3, "Adhiya")
+    updated = append_item(updated, "End")
+    print(f"Updated:  {updated}")
+    print(f"Original remains unchanged: {values}")
+
+
+if __name__ == "__main__":
+    main()
