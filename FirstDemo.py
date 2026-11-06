@@ -1,19 +1,19 @@
-print("hello")
-#this way we can define the comments
+"""First Python examples: values, variables, and types."""
 
-a = 3
-print(a)
 
-Str = "hello world"
-print(Str)
+def main() -> None:
+    print("hello")
+    number = 3
+    message = "hello world"
+    integer_value, decimal_value, description = 3, 4.5, "Great"
 
-b , c , d  = 3, 4.5 , "Great"
-print(b + c, 'i.e. 3 + 4.5 is 7.5 which is', d)
+    print(number)
+    print(message)
+    print(f"{integer_value} + {decimal_value} = {integer_value + decimal_value} ({description})")
+    print(f"Value is {integer_value}")
+    for value in (integer_value, decimal_value, description):
+        print(type(value).__name__)
 
-#Datatypes in python and how to get  Type at run
 
-print("{} {}".format('Value is' , b))
-
-print(type(b))
-print(type(c))
-print(type(d)) 
+if __name__ == "__main__":
+    main()
